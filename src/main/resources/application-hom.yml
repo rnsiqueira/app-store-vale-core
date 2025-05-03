@@ -1,0 +1,61 @@
+server:
+  port: 7001
+  servlet:
+    context-path: /product-data
+
+spring:
+  application:
+    name: product-data
+  cloud:
+    bootstrap:
+      enabled: true
+    gcp:
+      project-id: store-valesolution
+      pubsub:
+        enabled: false
+#        subscriber:
+#          executor-threads: 1
+#          parallel-pull-count: 1
+#          flow-control:
+#            max-outstanding-element-count: 2
+#            limit-exceeded-behavior: block
+      trace:
+        enabled: false
+      sql:
+        enable: false
+#  datasource:
+#    hikari:
+#      minimum-idle: 1
+#      maximum-pool-size: 5
+#      pool-name: db_valesolution-app-pool
+#      auto-commit: false
+#      connection-timeout: 70000
+#    username: "${DB_USER:valesolutionpsql}"
+#    password: "${DB_PASSWORD:codeBdVale#01}"
+#    driver-class-name: org.postgresql.Driver
+  data:
+    mongodb:
+      username: mongoUser
+      password: mongoPass
+      host: localhost
+      port: 27017
+      database: app
+      authentication-database: admin
+#  jpa:
+#    show-sql: false
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        temp:
+#          use_jdbc_metadata_defaults: false
+#        generate_statistics: false
+#        ddl-auto: none
+#  flyway:
+#    locations: "classpath:/db/migration"
+
+management:
+  endpoint:
+    health:
+      show-details: NEVER
+
+

@@ -1,0 +1,24 @@
+server:
+  port: 7001
+  servlet:
+    context-path: /product-data
+
+spring:
+  application:
+    name: product-data
+  datasource:
+    url: jdbc:h2:mem:app-productdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: anypass
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+
+
+
+management:
+  endpoint:
+    health:
+      show-details: NEVER
+
+

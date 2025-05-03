@@ -1,0 +1,44 @@
+server:
+  port: 9091
+  servlet:
+    context-path: /product-data
+
+spring:
+  application:
+    name: product-data
+  cloud:
+    bootstrap:
+      enabled: true
+    gcp:
+      project-id: store-valesolution
+      pubsub:
+        enabled: false
+#        subscriber:
+#          executor-threads: 1
+#          parallel-pull-count: 1
+#          flow-control:
+#            max-outstanding-element-count: 2
+#            limit-exceeded-behavior: block
+      trace:
+        enabled: false
+#      sql:
+#        instance-connection-name: store-valesolution:southamerica-east1:valesolution-bd
+#        database-name: valesolution-core-bd
+  data:
+    mongodb:
+      uri: "${URI-MONGODB}"
+      port: 27017
+      database: store-vale-app-bd
+      authentication-database: admin
+  security:
+    user:
+      name: "${security-user}"
+      password: "${security-pass}"
+
+
+management:
+  endpoint:
+    health:
+      show-details: NEVER
+
+

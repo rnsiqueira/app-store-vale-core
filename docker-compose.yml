@@ -1,0 +1,27 @@
+#docker-compose para configuração de ambiente local
+version: '3'
+
+services:
+#  database_postgres:
+#    container_name: "vale-solution-db-local"
+#    restart: always
+#    image: postgres:17.2
+#    environment:
+#      POSTGRES_USER: admin
+#      POSTGRES_PASSWORD: admin01
+#      POSTGRES_DB: valesolution-bd
+#      TZ: GMT
+#      PGDATA: /postgres_data
+#    ports:
+#    - "5432:5432"
+
+  database_mongo:
+    container_name: "mongoDb_for_gateway"
+    restart: always
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoUser
+      - MONGO_INITDB_ROOT_PASSWORD=mongoPass
+    ports:
+      - "27017:27017"
+
